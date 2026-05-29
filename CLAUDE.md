@@ -69,6 +69,9 @@ cd frontend && npx playwright test
 
 ## 개발 파이프라인
 
+> 상세 워크플로우는 **[DEV-WORKFLOW.md](./DEV-WORKFLOW.md)** 를 참고한다.
+> 역할 분담, 각 단계별 행동 기준, MCP 사용 시점, 테스트 전략 등이 정리되어 있다.
+
 ### 래칫 방법론 (Ratchet Pattern)
 구현은 AI가 한다. 완료 판정은 테스트가 한다.
 
