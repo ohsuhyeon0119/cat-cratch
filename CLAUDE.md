@@ -133,8 +133,20 @@ git clone https://github.com/ohsuhyeon0119/cat-cratch.wiki.git /tmp/catcratch-wi
 - PR 본문에 관련 이슈 번호(`Closes #N`), 변경 내용, 테스트 방법을 포함한다
 - PR 생성 후 GitHub Actions 결과를 확인한다
 
+### 브랜치 전략
+
+- `main` 브랜치에 직접 커밋하지 않는다
+- 이슈 작업 시 `feat/이슈번호-간단한설명` 브랜치를 생성해서 작업한다
+  ```
+  feat/3-auth-login
+  feat/7-sprite-motion
+  fix/12-wall-collision-bug
+  ```
+- 작업 완료 후 PR → main 머지
+
 ### 하지 말아야 할 것
 
+- `main`에 직접 커밋
 - 테스트 파일 수정 (Hook이 차단하지만 시도조차 하지 않는다)
 - `git push --force`
 - GitHub 이슈/칸반 상태 변경 (읽기만 가능)
