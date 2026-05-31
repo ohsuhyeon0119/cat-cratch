@@ -6,18 +6,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "case \"$CLAUDE_TOOL_INPUT\" in *'git commit'*) cd frontend && npx playwright test --reporter=line 2>&1 | tail -5 && cd ../backend && hurl --test tests/hurl/*.hurl --variable base_url=http://localhost:8000 2>&1 | tail -5 ;; esac",
-            "timeout": 60
-          }
-        ]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
+            "if": "Bash(git commit*)",
+            "command": "FAILED=0; [ -n \"$(find backend/tests/hurl -name '*.hurl' 2>/dev/null)\" ] && { hurl --test backend/tests/hurl/*.hurl --variable base_url=http://localhost:8000 2>&1 | tail -5 || FAILED=1; }; [ -n \"$(find frontend/e2e -name '*.spec.ts' 2>/dev/null)\" ] && { (cd frontend && npx playwright test --reporter=line 2>&1 | tail -5) || FAILED=1; }; [ $FAILED -eq 1 ] && exit 2; exit 0",
+            "timeout": 60,
+            "statusMessage": "커밋 전 테스트 검증 중..."
+          },
           {
             "type": "command",
-            "command": "case \"$CLAUDE_TOOL_INPUT\" in *'git push --force'*) echo '{\"block\": true, \"message\": \"강제 푸시는 차단됩니다.\"}' >&2; exit 2 ;; esac",
-            "timeout": 5
+            "if": "Bash(git push *)",
+            "command": "cat | jq -r '.tool_input.command // \"\"' | grep -q -- '--force' && exit 2; exit 0",
+            "timeout": 5,
+            "statusMessage": "force push 차단 검사..."
           }
         ]
       }
