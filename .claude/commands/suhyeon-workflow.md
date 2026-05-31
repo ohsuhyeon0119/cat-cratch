@@ -12,6 +12,7 @@ argument-hint: 이슈 번호 (예: #5)
 1. **이슈 파악**
    - `mcp__github__get_issue`로 이슈 #$ARGUMENTS 읽기
    - 기능 아이디어, 테스트 큰 틀 파악
+   - **적용 범위** 섹션 확인: 수정 가능/수정 금지 파일 목록을 파악하고 이후 모든 단계에서 반드시 준수한다
    - `context7` MCP로 관련 라이브러리 최신 API 확인
 
 2. **브레인스토밍** (`suhyeon-workflow:sw-brainstorming` 스킬 호출)
