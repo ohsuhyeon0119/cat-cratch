@@ -70,7 +70,7 @@ export default function EditorPage() {
           <span className={s.tLogoText}>Wa<em>Cratch</em></span>
         </Link>
         <div className={s.tDivider}/>
-        <input className={s.tProjectName} defaultValue="와피냥의 첫 번째 모험" type="text" spellCheck={false}/>
+        <input className={s.tProjectName} defaultValue="와냥이의 첫 번째 모험" type="text" spellCheck={false}/>
         <div className={s.tSpacer}/>
         <div className={s.runStop}>
           <button className={s.btnRun}>▶ 실행하기</button>

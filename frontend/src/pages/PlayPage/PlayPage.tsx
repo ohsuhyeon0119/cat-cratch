@@ -13,7 +13,7 @@ export default function PlayPage() {
         </Link>
         <div className={s.navDiv}/>
         <div>
-          <div className={s.navProjectTitle}>와피냥의 대모험</div>
+          <div className={s.navProjectTitle}>와냥이의 대모험</div>
           <div className={s.navAuthor}>by 코딩고양이</div>
         </div>
         <div className={s.navSpacer}/>

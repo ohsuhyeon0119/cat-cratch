@@ -77,7 +77,7 @@ export default function LoginPage() {
               <ellipse cx="170" cy="297" rx="34" ry="19" fill="#E8A818"/>
             </svg>
           </div>
-          <h2 className={s.leftTitle}>와피냥과 함께<br/>코딩해요! 🧇</h2>
+          <h2 className={s.leftTitle}>와냥이와 함께<br/>코딩해요! 🧇</h2>
           <p className={s.leftSub}>블록을 조립하면<br/>나만의 게임이 완성돼요!</p>
         </div>
       </div>
@@ -128,7 +128,7 @@ export default function LoginPage() {
             </div>
           ) : (
             <div>
-              <h2 className={s.formTitle}>와피냥 친구 되기! 🧇</h2>
+              <h2 className={s.formTitle}>와냥이 친구 되기! 🧇</h2>
               <p className={s.formSub}>정보를 입력하고 코딩 세계로 입장해요!</p>
               <div className={s.field}>
                 <label htmlFor="s-nickname">닉네임</label>
