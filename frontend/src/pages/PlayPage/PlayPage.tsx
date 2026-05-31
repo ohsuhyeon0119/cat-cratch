@@ -61,7 +61,6 @@ export default function PlayPage() {
               {isLiked ? '❤️' : '🤍'} 좋아요 <span className={s.abCount}>{likeCount.toLocaleString()}</span>
             </button>
             <button className={`${s.actionBtn} ${s.abShare}`} onClick={() => setShareOpen(true)}>🔗 공유</button>
-            <Link to="/editor/1" className={`${s.actionBtn} ${s.abRemix}`}>🔁 리믹스</Link>
             <div className={s.actionSpacer}/>
             <button className={s.fullscreenBtn} title="전체화면">⛶</button>
           </div>
@@ -88,7 +87,6 @@ export default function PlayPage() {
             <div className={s.infoStats}>
               <div className={s.infoStat}><span className={s.infoStatN}>1,234</span><span className={s.infoStatL}>❤️ 좋아요</span></div>
               <div className={s.infoStat}><span className={s.infoStatN}>8,412</span><span className={s.infoStatL}>👁️ 조회</span></div>
-              <div className={s.infoStat}><span className={s.infoStatN}>340</span><span className={s.infoStatL}>🔁 리믹스</span></div>
             </div>
           </div>
         </div>
