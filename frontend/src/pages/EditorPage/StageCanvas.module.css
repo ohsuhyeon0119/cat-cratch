@@ -1,0 +1,89 @@
+.stagePanel {
+  width: 440px; flex-shrink: 0;
+  background: #FFF8F2;
+  border-left: 3px solid #F0E0D6;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.stageControls {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 2px solid #F0E0D6;
+}
+.stageTitle { font-family: var(--font-d); font-size: 14px; font-weight: 800; color: var(--mid); }
+.stageBtns { display: flex; gap: 6px; }
+.sBtn {
+  width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 14px;
+  transition: all .15s; background: var(--orange-pale);
+}
+.sBtn:hover { background: var(--orange); }
+
+.stageCanvasWrap {
+  margin: 12px; border-radius: 18px; overflow: hidden;
+  border: 3px solid #F0E0D6;
+  flex-shrink: 0;
+}
+.canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.stageCoords {
+  display: flex; gap: 8px;
+  padding: 5px 14px;
+  border-bottom: 2px solid #F0E0D6;
+}
+.coordChip {
+  background: var(--orange-pale); border-radius: 8px;
+  padding: 3px 10px; font-family: 'Fira Code', monospace; font-size: 12px;
+  font-weight: 500; color: var(--orange);
+}
+
+.spriteSection { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.spriteSectionHeader {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px 8px;
+  border-bottom: 2px solid #F0E0D6;
+}
+.spriteSectionTitle { font-family: var(--font-d); font-size: 13px; font-weight: 800; color: var(--mid); }
+.addSprite {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--orange); color: #fff;
+  border: none; font-size: 16px; font-weight: 800; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 1px 2px 0 var(--orange-dk); transition: all .15s;
+}
+.addSprite:hover { transform: scale(1.1); }
+.spriteList { display: flex; gap: 8px; padding: 10px 14px; overflow-x: auto; }
+.spriteThumb {
+  flex-shrink: 0; width: 68px;
+  border-radius: 14px; padding: 8px 6px;
+  border: 2.5px solid transparent; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: #fff; transition: all .2s;
+}
+.spriteThumb.active { border-color: var(--orange); background: var(--orange-pale); }
+.spriteThumb:hover:not(.active) { border-color: var(--orange-pale); transform: translateY(-2px); }
+.sIcon { font-size: 26px; }
+.sName { font-family: var(--font-d); font-size: 10px; font-weight: 800; color: var(--mid); }
+.spriteThumb.active .sName { color: var(--orange); }
+
+.bgSectionHeader {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 14px;
+  border-top: 2px solid #F0E0D6;
+}
+.bgSectionTitle { font-family: var(--font-d); font-size: 13px; font-weight: 800; color: var(--mid); }
+.bgList { display: flex; gap: 8px; padding: 8px 14px 12px; overflow-x: auto; }
+.bgThumb {
+  flex-shrink: 0; width: 52px; height: 38px;
+  border-radius: 10px; cursor: pointer; border: 2.5px solid transparent;
+  transition: all .2s; overflow: hidden;
+}
+.bgThumb.active { border-color: var(--orange); }
+.bgThumb:hover:not(.active) { border-color: var(--orange-pale); transform: translateY(-1px); }
+.bgSky    { background: linear-gradient(180deg,#87CEEB,#7BC8A0); }
+.bgNight  { background: linear-gradient(180deg,#1a1a2e,#16213e); }
+.bgOcean  { background: linear-gradient(180deg,#0077B6,#00B4D8,#90E0EF); }
+.bgSpace  { background: radial-gradient(circle at 30% 40%, #2d1b69, #000); }
+.bgForest { background: linear-gradient(180deg,#87CEEB,#228B22,#006400); }
