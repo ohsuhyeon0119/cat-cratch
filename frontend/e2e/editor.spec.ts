@@ -12,11 +12,16 @@ test('툴바에 실행/멈추기 버튼이 렌더링된다', async ({ page }) =>
 test('카테고리 탭 클릭 시 해당 블록 목록으로 전환된다', async ({ page }) => {
   // Given
   await page.goto('/editor/test');
-  // When
-  await page.getByRole('button', { name: /감지/ }).click();
-  // Then
-  await expect(page.getByText(/위 키 눌렸을 때/).first()).toBeVisible();
-  await expect(page.getByText(/이동하기/)).not.toBeVisible();
+  // When — Blockly 툴박스 카테고리는 treeitem 역할로 렌더링됨
+  await page.getByRole('treeitem', { name: /감지/ }).click();
+  // Then — Blockly flyout(SVG)의 텍스트 내용으로 블록 확인
+  const flyout = page.locator('.blocklyFlyout:not(.blocklyTrashcanFlyout)');
+  await expect(flyout).toBeVisible();
+  // Blockly SVG는 공백을 U+00A0(non-breaking space)로 렌더링하므로 정규화 후 비교
+  const rawText = await flyout.textContent() ?? '';
+  const flyoutText = rawText.replace(/ /g, ' ');
+  expect(flyoutText).toMatch(/위 키 눌렸을 때/);
+  expect(flyoutText).not.toMatch(/이동하기/);
 });
 
 test('스테이지 패널이 렌더링된다', async ({ page }) => {
